@@ -1,18 +1,131 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <title>Allen's Resume</title>
-<style>
-	h1{
-		color:red;
-	}
-
-</style>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+	function getName() {
+		return document.getElementById('name').value;
+		}
+	function printInfo() {
+	
+		document.getElementById('textarea').value = "Nice to meet you! " + getName() ;
+	};
+</script>
 </head>
 <body>
-
+<div id="header">
 <h1>Allen Liao</h1>
-<p>Allen is trying to work this out</p>
+<img id="pic" src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/1505260_10201433309094880_1381997333_n.jpg?oh=24f4a5b60c341ef55ab47fe183973f29&oe=57137324" alt="profile" width="300">
+<ul id="button-head">
+	<li class="option"><a href="#Intro">Introduction</a></li>
+	<li class="option"><a href="#Qualification">Qualification</a></li>
+	<li class="option"><a href="#hobby">Hobby</a></li>
+	<li class="option"><a href="#education">Education</a></li> 
+	<li class="option"><a href="#experience">Experience</a></li>
+</ul>
+
+<p id="Intro">
+<span id="intro">INTRODUCTION</span>
+<br>What is your name? 
+<input type="text" size = 30 id="name"><input type="button" id="button" name="process" value="Comfirm" onclick="printInfo()"></input>
+<br>
+<textarea id="textarea" name="text" Width=900px heigh=200px Placeholder="Greeting!"></textarea>
+<br>
+My name is Allen Liao, welcome to my ePortfolio. Here you are going to learn about my strengths, achievements, and goals in life.  
+
+I was born and raised in Taipei, Taiwan, and currently reside in Salt Lake City, UT. I have been to many different countries to gain a wider vision of the world village in my life. I have a diverse culture background and speak 4 different languages fluently(Mandarin,English French, Taiwanese).  Exploring new things and overcoming different challenges are the joys in my life. I am currently  studying  accounting in the LDS Business College.  I believe that we all have unlimited potential  inside. If we have a great judgement to see  the most valuable things in life and arrange our priority, we can achieve wonderful success in life.
+
+Get to know me more on my other pages
+
+<br><br>Thanks,<br><br>
+Allen Liao</p>
+
+<a href="http://allenliao4.weebly.com/" id="weebly"><p>Click to go to my personal website</p></a>
+
+</div>
+<div id="Qualification">
+<h3>Summary of Qualification</h3>
+<ul>
+<li>I do what I say I will do.
+<li>Can spot problems and work out efficient and successful solutions.
+<li>I communicate well with others and find it easy to work on a team
+<li>Natural desire to learn more about those around me
+<li>Need to be both effective and productive 
+<li>Multi-lingual: Mandarin, English, French, Taiwanese
+</ul>
+</div>
+<div id="work-pic">
+<img src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-prn2/v/t1.0-9/1782132_10202298601326645_4466952261436537146_n.jpg?oh=c4633990441e092157abf188fe48d474&oe=5746FBDA" alt="work1" width="500">
+<img src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xta1/t31.0-8/12014985_10153685907501060_2822291710333253153_o.jpg" alt="work2" width="500">
+<img src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/11000517_10207015714895661_2076548950836258261_n.jpg?oh=129597b4d988e3e5f57a025550891fdd&oe=570440AF" alt="work3" width="500">
+</div>
+
+<h3 id="hobby">My Hobby</h3>
+<h4 id="travel-head">Travel</h4>
+<p id="travel-text">"Travel  brings power and love back into your life."-Rumi<br>
+    Exploring the world and getting to know different cultures are the most exciting things for me to do. I enjoy having various experiences from all parts of the world. I have been to many countries and I have made friends with all kinds of people. This hobby also allows me to have a greater vision of the global village. </p>
+<img id="travel-pic" src="http://allenliao4.weebly.com/uploads/3/2/2/6/32268917/2193001.jpg?250" alt="travel">
+<h4 id="magic-head">Magic</h4>
+<p id="magic-text">One of my hobbies is doing magic trick. Since high school, I have spent great amount of time to perform magic tricks to people on the street. I enjoy when I see people are amazed and happy because of the magic. I also enjoy talk to different people and practice my talking skills to perform the magic. I have developed many helpful skills about. </p>
+<img id="magic-pic" src="http://allenliao4.weebly.com/uploads/3/2/2/6/32268917/8855188.jpg?337" alt="magic">
+<div class="education">
+<h2 id="education">Education</h2>
+<ul>
+<li>Brigham Young University 							(Aug 2015 - Present)
+<pre>Computer Science Major<br>
+Business Management Minor<br>
+GPA: 4.0
+</pre>
+<img id="byu" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/BYU_Medallion_Logo.svg/2000px-BYU_Medallion_Logo.svg.png" alt="byu" width="350">
+
+</li>
+<li>LDS Business College - Graduation Valedictorian							(May 2014- Aug 2015)
+<pre>Associate of science in Business <br>
+GPA: 4.0
+</pre>
+</li>
+</ul>
+</div>
+
+<img id="exp-pic1" src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/12038092_10205333932008015_8326345759077714246_n.jpg?oh=51e6287c638790dc9841908560e726ca&oe=5744366B" alt="exp1" width="600">
+<img id="exp-pic2" src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/1972454_10201796541775470_203568118_n.jpg?oh=0420d45fabda6d8b43ee5da00a224862&oe=574096B2" alt="exp2" width="400">
+<img id="exp-pic3" src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/10003362_10201873136810298_536912784_n.jpg?oh=e629d2ac103041f8bda0a6f1180a2870&oe=570153A9" alt="exp3" width="400">
+
+<h5 id="experience">Experience</h5>
+<pre id="exp-list">
+
+<span class="title">Mandarin Facilitator, Missionary Training Center, Provo, Utah                                    Aug 2015 - Present
+Mandarin Facilitator, Missionary Training Center, Manila, Philippine             	         Feb 2014 - May 2015</span>
+
+	-Mentor and train 6 - 12 religious volunteer
+	-Planning and arrange workshops
+	-Emotional problem solving, inspire and enlighten others' potential
+
+<span class="title">Owner, NAGEPZ LLC, Provo, Utah                                 					April 2015 - Present
+Owner, HeYu LLC, Taipei, Taiwan 					        		   Oct 2014 - Present</span>
+
+	-Networking, find resource and connections over Asia, America and Europe 
+	-Goal setting and execute effectively to achieve deadline
+	-Promote and attract attentions through Social media marketing 
+
+<span class="title">Faculty Staff Development Support, LDS Business College, Salt Lake City, Utah   	   July 2014 - Aug 2015</span>
+
+	-Explore College online material and e-book through iBook Author
+	-Create college-wide instructor mentoring system
+	-Manage college coachingsuite website for training 
+
+<span class="title">Representative Calculator, National Artillery, Taiwan 					 Feb 2013 - Feb 2014</span>
+
+	-Lead a team of eight to accomplish annual national artillery completion
+	-First place graduated from national artillery school
+
+<span class="title">Volunteer Representative, Church of Jesus Christ of Latter-day Saint, France            Dec 2010 - Dec 2012</span>
+
+	-Collecting data and report to arrange training and edify team members
+	-Teaching inspiring lesson to improve the quality of others' lives
+	-Open new areas and train other volunteers 
+
+</pre>
 </body>
 </html>
