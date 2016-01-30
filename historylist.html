@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<title>
+FAMILY HISTORY LIST
+</title>
+<head>
+<style>
+	h2{
+		background-color:black;
+   		color:white;
+    	text-align:center;
+    	font-size:40px;
+    	padding:3px;
+		}
+	.content{
+		background-color:rgb(152,149,149);
+		}
+	.list{
+			text-align: center;
+			font-size:20px;
+		}
+	#pic{
+		text-align:left; 
+		padding:35px;
+		float:left;
+		
+		}
+	#name{
+		font-style:italic; 
+	}
+	.textpart{
+		background-color:black;
+		color:white;
+		padding:20px;
+		font-size:15px;
+		
+	}
+</style>
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp" ng-controller="todoCtrl">
+
+<h2>My Family History List</h2>
+
+<div class="content">
+<img id="pic" src="http://www.regenerationnet.com/wp-content/uploads/2015/04/Five-Steps-to-Verifying-Online-Genealogy-Sources.jpg" width="400">
+<pre class="textpart">
+	  I invite the young people of the Church to learn about and experience the Spirit of Elijah...
+
+	  As you respond in faith to this invitation, your hearts shall turn to the fathers.	
+
+ 	  The promises made to Abraham, Isaac, and Jacob will be implanted in your hearts. 
+
+ 	  Your patriarchal blessing, with its declaration of lineage, will link you to these fathers and be more meaningful to you. 
+
+ 	  Your love and gratitude for your ancestors will increase. 
+
+	  Your testimony of and conversion to the Savior will become deep and abiding. 
+
+ 	  And I promise you will be protected against the intensifying influence of the adversary. 
+
+ 	  As you participate in and love this holy work, you will be safeguarded in your youth and throughout your lives.
+
+
+<br><br><span id="name">                       		 ~David A. Bednar, The Hearts of the Children Shall Turn, Conference October 2011</span></pre>
+<div class="list">
+<h3>Enter Name to complete the list</h3>
+<form ng-submit="todoAdd()">
+    <input type="text" ng-model="familyInput1" size="30" placeholder="Person">
+    <input type="text" ng-model="familyInput2" size="30" placeholder="Mother">
+    <input type="text" ng-model="familyInput3" size="30" placeholder="Father">
+    <input type="submit" value="Add New">
+</form>
+
+<br>
+
+<div ng-repeat="x in todoList">
+    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+</div>
+
+<p><button ng-click="remove()">Remove marked</button></p>
+</div>
+</div>
+
+<script>
+var app = angular.module('myApp', []); 
+app.controller('todoCtrl', function($scope) {
+    $scope.todoList = [{todoText:'Frank Jones, Billy Jones, Millie Smith', done:false}];
+
+    $scope.todoAdd = function() {
+        $scope.todoList.push({todoText:$scope.familyInput1 +' ,'+ $scope.familyInput2 +' ,'+$scope.familyInput3, done:false});
+        $scope.todoInput = "";
+    };
+
+    $scope.remove = function() {
+        var oldList = $scope.todoList;
+        $scope.todoList = [];
+        angular.forEach(oldList, function(x) {
+            if (!x.done) $scope.todoList.push(x);
+        });
+    };
+});
+</script>
+
+</body>
+</html>
