@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+	<meta charst = "utf-8">
+	<title>Lab#3 Angular</title>
+<style>
+#header {
+	background-color:rgb(102,178,255); 
+    color:white; 
+    font-family:Helvetica;
+    font-size:34px; 
+    
+  
+}
+
+.bodypart{
+    background-color:rgb(204,255,255); 
+    padding:10px; 
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 150px;
+    
+}
+body{
+  text-align:center; 
+   background-image:url('http://www.hdwallpapersn.com/wp-content/uploads/2015/03/Ocean-HD-Wallpapers-9.jpg'); 
+}
+.User-list{
+  list-style:none; 
+}
+
+.Avatar{
+  text-align: center; 
+  
+}
+
+.Avatar img{
+  width:200px;
+  height: 200px; 
+  border-radius: 50%;
+   
+  
+}
+
+.Avatar h4{
+  text-transform: capitalize; 
+  color: red; 
+  font-family:Arial; 
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+	<div ng-app='app' ng-controller='mainCtrl'>
+      <div id="header">
+		<h1>Add Someone to the List</h1>
+      </div>
+        <div class="bodypart">
+		<form name='userForm' ng-submit='addNew(userForm)'> 
+			<input placeholder='Name' ng-model='userForm.name'/>
+			<input placeholder='Image Url' ng-model='userForm.url'/>
+
+			<button type='submit'> Add New Item </button>
+		</form>
+      
+        <ul class='User-list'>
+          <li ng-repeat='user in users'>
+            <avatar user='user' />
+            </div>
+          </li>
+        </ul>
+    </div>
+	</div>
+</body>
+<script>
+angular.module('app', [])
+  .controller('mainCtrl', mainCtrl)
+  .directive('avatar', avatarDirective); 
+
+function mainCtrl ($scope){
+  
+  $scope.users = [];
+  $scope.addNew = function (user) {
+    $scope.users.push({
+      name: user.name,
+      avatarUrl: user.url
+     
+    });
+    user.name = '';
+    user.url = ''; 
+
+  
+  };
+}
+
+function avatarDirective (){
+  return{
+    scope: {
+      user:'='
+    },
+    restrict:'E',
+    template: (
+    '<div class="Avatar">' + '<img ng-src="{{user.avatarUrl}}" />' + '<h4>{{user.name}}</h4>' + '</div>'), 
+    link: link
+  };
+  function link (scope){
+    if(!scope.user.avatarUrl){
+      scope.user.avatarUrl = 'http://thealmanac.org/assets/img/default_avatar.png';
+    }
+  }
+}
+</script>
+</html>
+
